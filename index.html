@@ -37,7 +37,7 @@
     }
 	#rectangle{
 		width:415px;
-		height:230px;
+		height:380px;
 		background-color: rgb(255, 242, 204);
 		max-width: 500px;
   		margin: auto;
@@ -56,6 +56,7 @@
     </style>
 <body>
 <div id="rectangle">
+	<p><b>Add movie...</b></p>
 	<form action ="" method="post">
 		Author:<br>
 		<input type="text" name="author" size="35"><br>
@@ -64,12 +65,27 @@
 		Publisher:<br>
 		<input type="text" name="publisher" size="35"><br>
 		ISBN:<br>
-		<input type="text" name="isbn" size="35"><br>
+		<input type="text" pattern="[0-9]{3}\-[0-9]{1}\-[0-9]{4}\-[0-9]{4}\-[0-9]{1}" name="isbn" size="35"><br>
 		Genre:<br>
-		<input type="text" name="genre" size="35"><br>
+		<input type="number" name="genre" size="35"><br>
 		<!--<select class="add">-->
-			<!--<option value=1>Dramat</option>-->
+			<!--<option value=1>Romans</option>-->
+			<!--<option value=2>Obyczajowa</option>-->
+			<!--<option value=3>Sci-fi i fantasy</option>-->
+			<!--<option value=4>Literatura faktu</option>-->
+			<!--<option value=5>Popularnonaukowa</option>-->
+			<!--<option value=6>Poradnik</option>-->
+			<!--<option value=7>Kryminał, sensacja</option>-->
 		<!--</select><br><br>-->
+		<div>
+			<li>1 - Romans</li>
+			<li>2 - Obyczajowa</li>
+			<li>3 - Sci-fi i fantasy</li>
+            <li>4 - Literatura faktu</li>
+			<li>5 - Popularnonaukowa</li>
+			<li>6 - Poradnik</li>
+			<li>7 - Kryminał, sensacja</li>
+		</div>
 
 		<button type="submit" class="add">ADD</button>
 	</form>
