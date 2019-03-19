@@ -5,58 +5,10 @@
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/app.js"></script>
-	<style>
-	body {
-		background-image: linear-gradient(to right,blue 10%,red 100%), url("images/book.jpg");
-		background-color: darkgray;
-		background-blend-mode: screen;
-	}
-	img {
-		background-image: url("images/book.jpg");
-		opacity: 0.5;
-  		filter: alpha(opacity=50);
-	}
-    th {
-        background-color: rgb(153, 102, 51);
-		color: #eeeeee;
-
-    }
-    tr:nth-of-type(odd) {
-        background-color: rgb(255, 204, 204);
-    }
-	tr:nth-of-type(even) {
-        background-color: rgb(255, 242, 204);
-    }
-    table, tr, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 5px;
-		text-align: center;
-		max-width: 500px;
-  		margin: auto;
-    }
-	#rectangle{
-		width:415px;
-		height:380px;
-		background-color: rgb(255, 242, 204);
-		max-width: 500px;
-  		margin: auto;
-		margin-bottom: 10px;
-		border-style: solid;
-		border-width: 1px;
-		border-color: black;
-		padding: 25px;
-
-	}
-	.add {
-		background-color: white;
-		color: black;
-		border: 2px solid #f44336;
-	}
-    </style>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
 <body>
 <div id="rectangle">
-	<p><b>Add movie...</b></p>
+	<p><b>Add a book...</b></p>
 	<form action ="" method="post">
 		Author:<br>
 		<input type="text" name="author" size="35"><br>
@@ -67,27 +19,16 @@
 		ISBN:<br>
 		<input type="text" pattern="[0-9]{3}\-[0-9]{1}\-[0-9]{4}\-[0-9]{4}\-[0-9]{1}" name="isbn" size="35"><br>
 		Genre:<br>
-		<input type="number" name="genre" size="35"><br>
-		<!--<select class="add">-->
-			<!--<option value=1>Romans</option>-->
-			<!--<option value=2>Obyczajowa</option>-->
-			<!--<option value=3>Sci-fi i fantasy</option>-->
-			<!--<option value=4>Literatura faktu</option>-->
-			<!--<option value=5>Popularnonaukowa</option>-->
-			<!--<option value=6>Poradnik</option>-->
-			<!--<option value=7>Kryminał, sensacja</option>-->
-		<!--</select><br><br>-->
-		<div>
-			<li>1 - Romans</li>
-			<li>2 - Obyczajowa</li>
-			<li>3 - Sci-fi i fantasy</li>
-            <li>4 - Literatura faktu</li>
-			<li>5 - Popularnonaukowa</li>
-			<li>6 - Poradnik</li>
-			<li>7 - Kryminał, sensacja</li>
-		</div>
-
-		<button type="submit" class="add">ADD</button>
+		<select name="genre" class="add">
+			<option value=1>Romans</option>
+			<option value=2>Obyczajowa</option>
+			<option value=3>Sci-fi i fantasy</option>
+			<option value=4>Literatura faktu</option>
+			<option value=5>Popularnonaukowa</option>
+			<option value=6>Poradnik</option>
+			<option value=7>Kryminał, sensacja</option>
+		</select><br><br>
+		<button type="submit" class="add2">ADD</button>
 	</form>
 </div>
 <table>

@@ -62,22 +62,24 @@ tbody.on("click", ".details", function(event) {
                 tr.append($(`<td>${books[i].author}</td>`));
                 tr.append($(`<td>${books[i].title}</td>`));
                 tr.append($(`<td><a class="details" href="#" data-id="${books[i].id}">show</a></td>`));
-                tr.append($(`<td><a class="delete" href="#">delete</a></td>`));
-
+                tr.append($(`<td><a class="delete" href="#" data-id="${books[i].id}">delete</a></td>`));
                 tbody.append(tr);
             }
-    }).always($(".delete").on("click", ".delete",function (event) {
-        event.preventDefault();
-        console.log("Działa");
-        $.ajax({
-        url: `http://localhost:8000/book/${$(".delete").attr("id")}`,
-        data: {},
-        type: "delete",
-        dataType: "json"
-        });
-        console.log("Delete poszlo");
-        location.reload()
-    }));
+
+    }).always(function () {
+        var delete_element = $(".delete");
+        delete_element.click(function (event) {
+            console.log("Działa");
+
+            $.ajax({
+            url: `http://localhost:8000/book/${$(this).data("id")}`,
+            data: {},
+            type: "delete",
+            dataType: "json"
+            });
+            location.reload();
+        })
+    });
 
     $("form").on("submit", function( event ) {
         event.preventDefault();
@@ -86,10 +88,9 @@ tbody.on("click", ".details", function(event) {
 
         $.post("http://localhost:8000/book/", formData)
             .done(function () {
-                console.log("Poszło")
+                console.log("Poszło");
+                location.reload();
             })
 
     });
 });
-
-
